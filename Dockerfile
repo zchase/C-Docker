@@ -1,5 +1,8 @@
 FROM mono:4.2.3.4
 
-ADD webserver.cs
-RUN mcs webserver.cs
+RUN mkdir -m release
+RUN mcs webserver.cs -out:release/webserver.exe
+COPY . release/
+
+EXPOSE 8080
 CMD [ "mono", "webserver.cs" ]
