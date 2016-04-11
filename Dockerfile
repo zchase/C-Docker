@@ -1,6 +1,6 @@
 FROM mono:4.2.3.4
 
-COPY . release/
+COPY . /
 RUN ls
 RUN cd release; ls
 
